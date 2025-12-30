@@ -1,0 +1,113 @@
+{
+  "route": "/collection",
+  "title": "Things that matter",
+  "sections": [
+    {
+      "key": "header",
+      "label": "Collection",
+      "heading": "Things that matter",
+      "subheading": "Tools, ideas, people, and places that shape how I work and think. A curated cabinet of curiosities."
+    },
+    {
+      "key": "tabs",
+      "items": ["All", "Tools", "Ideas", "People", "Places", "Ephemera", "Notes"]
+    },
+    {
+      "key": "cards",
+      "items": [
+        {
+          "slug": "claude-ai",
+          "title": "Claude by Anthropic",
+          "description": "An AI assistant that feels like a thoughtful collaborator rather than a tool. Changed how I think about building with AI.",
+          "category": "tools",
+          "year": 2024
+        },
+        {
+          "slug": "cursor-editor",
+          "title": "Cursor Editor",
+          "description": "A code editor built around AI assistance. Makes pair programming with AI feel natural.",
+          "category": "tools",
+          "year": 2024
+        },
+        {
+          "slug": "bauhaus-dessau",
+          "title": "Bauhaus Dessau",
+          "description": "The legendary design school that shaped modern design. Form follows function, grid systems, and geometric clarity.",
+          "category": "ideas",
+          "year": 1925
+        },
+        {
+          "slug": "grid-systems",
+          "title": "Grid Systems in Design",
+          "description": "The invisible structure that makes visual information clear and accessible. Order from chaos.",
+          "category": "ideas",
+          "year": 1961
+        },
+        {
+          "slug": "functional-design",
+          "title": "Functional Design",
+          "description": "Design that serves its purpose without unnecessary ornament. The idea that beauty emerges from utility.",
+          "category": "ideas",
+          "year": 1896
+        },
+        {
+          "slug": "prompt-engineering",
+          "title": "Prompt Engineering",
+          "description": "The art of crafting instructions for AI systems. A new form of writing that's part specification, part conversation.",
+          "category": "ideas",
+          "year": 2023
+        },
+        {
+          "slug": "ben-franklin",
+          "title": "Benjamin Franklin",
+          "description": "Printer, inventor, diplomat, founder. The original builder who showed that curiosity and experimentation could change the world.",
+          "category": "people",
+          "year": 1706
+        },
+        {
+          "slug": "paul-revere",
+          "title": "Paul Revere",
+          "description": "Silversmith, engraver, messenger. A craftsman who became a revolutionary, showing how practical skills can serve bigger purposes.",
+          "category": "people",
+          "year": 1735
+        },
+        {
+          "slug": "startup-founders",
+          "title": "Startup Founders",
+          "description": "Modern builders who start with nothing but an idea and determination. The spiritual descendants of the founding fathers.",
+          "category": "people",
+          "year": 2024
+        },
+        {
+          "slug": "lexington-green",
+          "title": "Lexington Green",
+          "description": "Where the American Revolution began. A small town common that became the birthplace of a nation.",
+          "category": "places",
+          "year": 1775
+        },
+        {
+          "slug": "founding-era",
+          "title": "The Founding Era",
+          "description": "The period when ordinary people decided to build something new. A time when founders were literally founding a nation.",
+          "category": "ephemera",
+          "year": 1776
+        },
+        {
+          "slug": "craft-with-anna",
+          "title": "Craft With Anna",
+          "description": "A website that inspired this collection format. Personal and curated, like a cabinet of curiosities.",
+          "category": "ephemera",
+          "year": 2024
+        }
+      ]
+    }
+  ],
+  "source": {
+    "type": "repo",
+    "files": [
+      "src/app/collection/page.tsx",
+      "content/collection/*.json"
+    ],
+    "capturedAt": "2024-12-30T00:00:00Z"
+  }
+}

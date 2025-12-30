@@ -1,0 +1,48 @@
+{
+  "route": "/experiments/personal-studio",
+  "slug": "personal-studio",
+  "title": "Living Studio Website",
+  "sections": [
+    {
+      "key": "header",
+      "status": "in-progress",
+      "year": 2024,
+      "title": "Living Studio Website",
+      "description": "This site - a personal studio that evolves over time, inspired by Bauhaus design principles.",
+      "tags": ["design", "code"],
+      "role": "Designer & Builder"
+    },
+    {
+      "key": "intention",
+      "label": "Intention",
+      "text": "Create a space that feels like a curated collection rather than a static portfolio."
+    },
+    {
+      "key": "what-i-did",
+      "label": "What I did",
+      "items": [
+        "Designed Bauhaus-inspired grid system and typography",
+        "Built interactive Collection feature with modal gallery",
+        "Created Now section for living updates"
+      ]
+    },
+    {
+      "key": "what-surprised-me",
+      "label": "What surprised me",
+      "text": "How satisfying it is to build something personal with modern tools."
+    },
+    {
+      "key": "next-iteration",
+      "label": "Next iteration",
+      "text": "Adding more collection items and experimenting with subtle animations."
+    }
+  ],
+  "source": {
+    "type": "repo",
+    "files": [
+      "content/experiments/personal-studio.json",
+      "src/app/experiments/[slug]/page.tsx"
+    ],
+    "capturedAt": "2024-12-30T00:00:00Z"
+  }
+}

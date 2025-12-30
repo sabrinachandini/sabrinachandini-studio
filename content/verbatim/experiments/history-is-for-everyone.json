@@ -1,0 +1,60 @@
+{
+  "route": "/experiments/history-is-for-everyone",
+  "slug": "history-is-for-everyone",
+  "title": "History Is For Everyone",
+  "sections": [
+    {
+      "key": "header",
+      "status": "In Progress",
+      "year": 2024,
+      "title": "History Is For Everyone",
+      "description": "A platform for Revolutionary War-era American towns to share their history and attract visitors for America's 250th anniversary.",
+      "tags": ["product", "code"],
+      "role": "Founder & Builder"
+    },
+    {
+      "key": "intention",
+      "label": "Intention",
+      "text": "Make local American history accessible and engaging for modern audiences."
+    },
+    {
+      "key": "what-i-did",
+      "label": "What I did",
+      "items": [
+        "Built multi-tenant Next.js platform with Supabase backend",
+        "Created agent system for continuous content generation",
+        "Implemented structured data for SEO optimization",
+        "Designed editorial voice system for consistent content"
+      ]
+    },
+    {
+      "key": "what-surprised-me",
+      "label": "What surprised me",
+      "text": "How much AI can help with research and content creation when given the right constraints and editorial guidelines."
+    },
+    {
+      "key": "artifacts",
+      "label": "Artifacts",
+      "items": [
+        {
+          "type": "live",
+          "url": "https://historyisforeveryone.com",
+          "label": "Live site"
+        }
+      ]
+    },
+    {
+      "key": "next-iteration",
+      "label": "Next iteration",
+      "text": "Expanding to more towns and adding interactive features for visitors."
+    }
+  ],
+  "source": {
+    "type": "repo",
+    "files": [
+      "content/experiments/history-is-for-everyone.json",
+      "src/app/experiments/[slug]/page.tsx"
+    ],
+    "capturedAt": "2024-12-30T00:00:00Z"
+  }
+}

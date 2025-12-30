@@ -1,0 +1,59 @@
+{
+  "route": "/experiments",
+  "title": "Things I'm building",
+  "sections": [
+    {
+      "key": "header",
+      "label": "Experiments",
+      "heading": "Things I'm building",
+      "subheading": "Products, projects, writing, and talks. Each experiment is an opportunity to learn something new."
+    },
+    {
+      "key": "tabs",
+      "items": ["All", "In Progress", "Shipped", "Writing", "Talks"]
+    },
+    {
+      "key": "cards",
+      "items": [
+        {
+          "slug": "history-is-for-everyone",
+          "title": "History Is For Everyone",
+          "description": "A platform for Revolutionary War-era American towns to share their history and attract visitors for America's 250th anniversary.",
+          "status": "in-progress",
+          "year": 2024,
+          "tags": ["product", "code"],
+          "featured": true,
+          "href": "/experiments/history-is-for-everyone"
+        },
+        {
+          "slug": "lexington-250",
+          "title": "Lexington 250",
+          "description": "The flagship town for History Is For Everyone, celebrating Lexington's role in the American Revolution.",
+          "status": "shipped",
+          "year": 2024,
+          "tags": ["product", "writing"],
+          "featured": true,
+          "href": "/experiments/lexington-250"
+        },
+        {
+          "slug": "personal-studio",
+          "title": "Living Studio Website",
+          "description": "This site - a personal studio that evolves over time, inspired by Bauhaus design principles.",
+          "status": "in-progress",
+          "year": 2024,
+          "tags": ["design", "code"],
+          "featured": false,
+          "href": "/experiments/personal-studio"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "type": "repo",
+    "files": [
+      "src/app/experiments/page.tsx",
+      "content/experiments/*.json"
+    ],
+    "capturedAt": "2024-12-30T00:00:00Z"
+  }
+}

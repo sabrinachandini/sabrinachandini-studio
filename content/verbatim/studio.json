@@ -1,0 +1,87 @@
+{
+  "route": "/",
+  "title": "Builder • Storyteller • Entrepreneur",
+  "sections": [
+    {
+      "key": "hero",
+      "blocks": [
+        "Builder • Storyteller • Entrepreneur",
+        "Always learning new AI tools. Inspired by people creating something new—startup founders or founding fathers."
+      ]
+    },
+    {
+      "key": "now",
+      "header": "Now",
+      "subheader": "What I'm focused on right now. Updated December 2024.",
+      "columns": {
+        "making": [
+          {
+            "title": "History Is For Everyone",
+            "description": "Building a platform for Revolutionary War-era American towns"
+          },
+          {
+            "title": "Personal site refresh",
+            "description": "This living studio you're looking at now"
+          }
+        ],
+        "learning": [
+          {
+            "title": "Claude and AI assistants",
+            "description": "Exploring how AI tools can augment creative work"
+          },
+          {
+            "title": "Next.js App Router",
+            "description": "Server components, streaming, and modern React patterns"
+          },
+          {
+            "title": "Prompt engineering",
+            "description": "Crafting better instructions for AI collaborators"
+          }
+        ],
+        "collecting": [
+          {
+            "title": "Founders and founding fathers",
+            "description": "Stories of people who built something from nothing"
+          },
+          {
+            "title": "Bauhaus design principles",
+            "description": "Form follows function, grid systems, geometric clarity"
+          },
+          {
+            "title": "AI tool discoveries",
+            "description": "New tools that change how we work and create"
+          }
+        ]
+      }
+    },
+    {
+      "key": "in-progress",
+      "header": "In Progress",
+      "subheader": "Experiments I'm actively working on."
+    },
+    {
+      "key": "shipped",
+      "header": "Recently Shipped",
+      "subheader": "Things I've completed and released."
+    },
+    {
+      "key": "collection-teaser",
+      "header": "Collection",
+      "subheader": "Tools, ideas, people, and places that shape how I work and think."
+    },
+    {
+      "key": "cta",
+      "header": "Let's build something together",
+      "subheader": "Open to collaborations, speaking, and new projects.",
+      "buttonText": "Get in touch"
+    }
+  ],
+  "source": {
+    "type": "repo",
+    "files": [
+      "src/app/page.tsx",
+      "content/now/now.json"
+    ],
+    "capturedAt": "2024-12-30T00:00:00Z"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "navigation": {
+    "items": [
+      { "name": "Studio", "href": "/" },
+      { "name": "Experiments", "href": "/experiments" },
+      { "name": "Collection", "href": "/collection" },
+      { "name": "Media", "href": "/media" },
+      { "name": "Contact", "href": "/contact" }
+    ]
+  },
+  "footer": {
+    "brand": {
+      "name": "Sabrina Chandini",
+      "tagline": "Builder, storyteller, entrepreneur. Always learning new AI tools."
+    },
+    "sections": [
+      {
+        "label": "Navigate",
+        "links": [
+          { "name": "Studio", "href": "/" },
+          { "name": "Experiments", "href": "/experiments" },
+          { "name": "Collection", "href": "/collection" },
+          { "name": "Media", "href": "/media" },
+          { "name": "Contact", "href": "/contact" }
+        ]
+      },
+      {
+        "label": "Connect",
+        "links": [
+          { "name": "LinkedIn", "href": "https://linkedin.com/in/sabrinachandini" },
+          { "name": "Twitter", "href": "https://twitter.com/sabrinachandini" },
+          { "name": "Email", "href": "mailto:hello@sabrinachandini.com" }
+        ]
+      }
+    ],
+    "copyright": "© {year} Sabrina Chandini. All rights reserved."
+  },
+  "metadata": {
+    "siteTitle": "Sabrina Chandini — Builder, Storyteller, Entrepreneur",
+    "siteDescription": "Builder, storyteller, entrepreneur. Always learning new AI tools. Inspired by people creating something new—startup founders or founding fathers."
+  },
+  "source": {
+    "type": "repo",
+    "files": [
+      "src/components/layout/Header.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/app/layout.tsx"
+    ],
+    "capturedAt": "2024-12-30T00:00:00Z"
+  }
+}

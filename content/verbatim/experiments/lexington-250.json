@@ -1,0 +1,54 @@
+{
+  "route": "/experiments/lexington-250",
+  "slug": "lexington-250",
+  "title": "Lexington 250",
+  "sections": [
+    {
+      "key": "header",
+      "status": "shipped",
+      "year": 2024,
+      "title": "Lexington 250",
+      "description": "The flagship town for History Is For Everyone, celebrating Lexington's role in the American Revolution.",
+      "tags": ["product", "writing"],
+      "role": "Creator"
+    },
+    {
+      "key": "intention",
+      "label": "Intention",
+      "text": "Create the definitive digital resource for Lexington's 250th anniversary."
+    },
+    {
+      "key": "what-i-did",
+      "label": "What I did",
+      "items": [
+        "Curated and wrote content about Lexington's Revolutionary history",
+        "Built local business and event discovery features",
+        "Created itineraries for visitors and families"
+      ]
+    },
+    {
+      "key": "what-surprised-me",
+      "label": "What surprised me",
+      "text": "The depth of local enthusiasm for their town's history when presented in an engaging way."
+    },
+    {
+      "key": "artifacts",
+      "label": "Artifacts",
+      "items": [
+        {
+          "type": "live",
+          "url": "https://lexington.historyisforeveryone.com",
+          "label": "Lexington site"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "type": "repo",
+    "files": [
+      "content/experiments/lexington-250.json",
+      "src/app/experiments/[slug]/page.tsx"
+    ],
+    "capturedAt": "2024-12-30T00:00:00Z"
+  }
+}

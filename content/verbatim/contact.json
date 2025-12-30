@@ -1,0 +1,64 @@
+{
+  "route": "/contact",
+  "title": "Let's talk",
+  "sections": [
+    {
+      "key": "header",
+      "label": "Contact",
+      "heading": "Let's talk",
+      "subheading": "I'm always interested in new ideas, collaborations, and conversations. Email is the best way to reach me."
+    },
+    {
+      "key": "reasons",
+      "label": "Reasons to get in touch",
+      "items": [
+        {
+          "title": "Collaborations",
+          "description": "Building something and think we might work well together."
+        },
+        {
+          "title": "Speaking",
+          "description": "Interested in having me speak at your event or podcast."
+        },
+        {
+          "title": "Project ideas",
+          "description": "Have an idea you want to explore or get feedback on."
+        }
+      ]
+    },
+    {
+      "key": "contact-methods",
+      "label": "Find me here",
+      "items": [
+        {
+          "name": "Email",
+          "href": "mailto:hello@sabrinachandini.com",
+          "label": "hello@sabrinachandini.com"
+        },
+        {
+          "name": "LinkedIn",
+          "href": "https://linkedin.com/in/sabrinachandini",
+          "label": "linkedin.com/in/sabrinachandini"
+        },
+        {
+          "name": "Twitter",
+          "href": "https://twitter.com/sabrinachandini",
+          "label": "@sabrinachandini"
+        }
+      ]
+    },
+    {
+      "key": "cta",
+      "heading": "Ready to reach out?",
+      "text": "The best way to start a conversation is a simple email.",
+      "buttonText": "Send an email"
+    }
+  ],
+  "source": {
+    "type": "repo",
+    "files": [
+      "src/app/contact/page.tsx"
+    ],
+    "capturedAt": "2024-12-30T00:00:00Z"
+  }
+}

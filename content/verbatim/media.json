@@ -1,0 +1,48 @@
+{
+  "route": "/media",
+  "title": "In the press",
+  "sections": [
+    {
+      "key": "header",
+      "label": "Media",
+      "heading": "In the press",
+      "subheading": "Interviews, features, and talks."
+    },
+    {
+      "key": "empty-state",
+      "heading": "No media items yet",
+      "text": "Media appearances, press features, podcast interviews, and talks will appear here once added.",
+      "instruction": "To add media items, create JSON files in /content/media/"
+    },
+    {
+      "key": "media-kit",
+      "label": "Media Kit",
+      "bio": "Builder, storyteller, entrepreneur. Always learning new AI tools. Inspired by people creating something new—startup founders or founding fathers.",
+      "contact": {
+        "label": "Contact",
+        "email": "hello@sabrinachandini.com"
+      },
+      "connect": {
+        "label": "Connect",
+        "links": [
+          { "name": "LinkedIn", "url": "https://linkedin.com/in/sabrinachandini" },
+          { "name": "Twitter", "url": "https://twitter.com/sabrinachandini" }
+        ]
+      }
+    },
+    {
+      "key": "cta",
+      "heading": "Have a media opportunity?",
+      "text": "Open to interviews, podcasts, speaking engagements, and features.",
+      "buttonText": "Get in touch"
+    }
+  ],
+  "source": {
+    "type": "repo",
+    "files": [
+      "src/app/media/page.tsx",
+      "content/site/media-kit.json"
+    ],
+    "capturedAt": "2024-12-30T00:00:00Z"
+  }
+}
