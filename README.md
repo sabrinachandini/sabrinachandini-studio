@@ -54,8 +54,12 @@ content/
 │   └── now.json           # Current "Now" section content
 ├── experiments/
 │   └── *.json             # Individual experiment files
-└── collection/
-    └── *.json             # Individual collection items
+├── collection/
+│   └── *.json             # Individual collection items
+├── media/
+│   └── *.json             # Media appearances (press, podcasts, talks)
+└── site/
+    └── media-kit.json     # Bio, contact, and social links for media kit
 ```
 
 ## How to Add Content
@@ -129,6 +133,56 @@ Edit `content/now/now.json`:
   ],
   "collecting": [
     { "title": "Theme", "description": "Why it interests me" }
+  ],
+  "updatedAt": "2024-12-30"
+}
+```
+
+### Adding a Media Item
+
+Create a JSON file in `content/media/` with this structure:
+
+```json
+{
+  "slug": "my-interview",
+  "title": "Interview Title",
+  "outlet": "Publication Name",
+  "type": "interview",
+  "date": "2024-06-15",
+  "url": "https://example.com/article",
+  "internalPath": "/experiments/related-project",
+  "description": "A 1-2 sentence blurb about this media appearance.",
+  "whyItMattered": "Optional deeper context shown on hover.",
+  "updatedAt": "2024-12-30"
+}
+```
+
+**Media types**: `press`, `podcast`, `talk`, `interview`, `feature`, `other`
+
+**Fields**:
+- `slug` (required): Unique identifier for the file
+- `title` (required): Title of the appearance
+- `outlet` (required): Publication/show/event name
+- `type` (required): One of the types listed above
+- `description` (required): Short blurb
+- `updatedAt` (required): Date for changelog tracking
+- `date` (optional): When it was published (ISO format)
+- `url` (optional): External link to the content
+- `internalPath` (optional): Link to related internal page
+- `image` (optional): Local image path
+- `whyItMattered` (optional): Shows on hover
+
+### Updating the Media Kit
+
+Edit `content/site/media-kit.json`:
+
+```json
+{
+  "bio": "Your short bio for media use.",
+  "contactEmail": "hello@example.com",
+  "socialLinks": [
+    { "name": "LinkedIn", "url": "https://linkedin.com/in/..." },
+    { "name": "Twitter", "url": "https://twitter.com/..." }
   ],
   "updatedAt": "2024-12-30"
 }

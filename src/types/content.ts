@@ -84,17 +84,36 @@ export type CollectionItem = z.infer<typeof CollectionItemSchema>;
 // =============================================================================
 // MEDIA SCHEMA
 // =============================================================================
-export const MediaTypeSchema = z.enum(['press', 'podcast', 'radio', 'tv', 'talks']);
+export const MediaTypeSchema = z.enum(['press', 'podcast', 'talk', 'interview', 'feature', 'other']);
 
 export const MediaItemSchema = z.object({
-  id: z.string(),
-  outlet: z.string(),
+  slug: z.string(),
   title: z.string(),
+  outlet: z.string(),
   type: MediaTypeSchema,
-  date: z.string().optional(),
-  blurb: z.string().optional(),
-  url: z.string().url(),
+  date: z.string().optional(), // ISO date if available
+  url: z.string().url().optional(), // External link to coverage
+  internalPath: z.string().optional(), // e.g., /experiments/some-project
+  description: z.string(), // 1-2 sentence blurb
+  image: z.string().optional(), // Local asset path
+  whyItMattered: z.string().optional(), // Optional deeper context
+  updatedAt: z.string(), // For changelog tracking
 });
 
 export type MediaType = z.infer<typeof MediaTypeSchema>;
 export type MediaItem = z.infer<typeof MediaItemSchema>;
+
+// =============================================================================
+// MEDIA KIT SCHEMA
+// =============================================================================
+export const MediaKitSchema = z.object({
+  bio: z.string(),
+  contactEmail: z.string(),
+  socialLinks: z.array(z.object({
+    name: z.string(),
+    url: z.string(),
+  })),
+  updatedAt: z.string(),
+});
+
+export type MediaKit = z.infer<typeof MediaKitSchema>;
