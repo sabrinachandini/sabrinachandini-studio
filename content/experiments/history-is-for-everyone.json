@@ -1,0 +1,26 @@
+{
+  "slug": "history-is-for-everyone",
+  "title": "History Is For Everyone",
+  "description": "A platform for Revolutionary War-era American towns to share their history and attract visitors for America's 250th anniversary.",
+  "intention": "Make local American history accessible and engaging for modern audiences.",
+  "role": "Founder & Builder",
+  "status": "in-progress",
+  "tags": ["product", "code"],
+  "featured": true,
+  "whatIDid": [
+    "Built multi-tenant Next.js platform with Supabase backend",
+    "Created agent system for continuous content generation",
+    "Implemented structured data for SEO optimization",
+    "Designed editorial voice system for consistent content"
+  ],
+  "whatSurprisedMe": "How much AI can help with research and content creation when given the right constraints and editorial guidelines.",
+  "nextIteration": "Expanding to more towns and adding interactive features for visitors.",
+  "artifacts": [
+    {
+      "type": "live",
+      "url": "https://historyisforeveryone.com",
+      "label": "Live site"
+    }
+  ],
+  "year": 2024
+}

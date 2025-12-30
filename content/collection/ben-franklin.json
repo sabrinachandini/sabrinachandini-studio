@@ -1,0 +1,9 @@
+{
+  "slug": "ben-franklin",
+  "title": "Benjamin Franklin",
+  "description": "Printer, inventor, diplomat, founder. The original builder who showed that curiosity and experimentation could change the world.",
+  "category": "people",
+  "year": 1706,
+  "whyItMatters": "Proof that you don't have to choose between being a maker and a thinker - you can be both.",
+  "related": ["paul-revere", "founding-era"]
+}

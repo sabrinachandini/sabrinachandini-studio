@@ -1,0 +1,24 @@
+{
+  "slug": "lexington-250",
+  "title": "Lexington 250",
+  "description": "The flagship town for History Is For Everyone, celebrating Lexington's role in the American Revolution.",
+  "intention": "Create the definitive digital resource for Lexington's 250th anniversary.",
+  "role": "Creator",
+  "status": "shipped",
+  "tags": ["product", "writing"],
+  "featured": true,
+  "whatIDid": [
+    "Curated and wrote content about Lexington's Revolutionary history",
+    "Built local business and event discovery features",
+    "Created itineraries for visitors and families"
+  ],
+  "whatSurprisedMe": "The depth of local enthusiasm for their town's history when presented in an engaging way.",
+  "artifacts": [
+    {
+      "type": "live",
+      "url": "https://lexington.historyisforeveryone.com",
+      "label": "Lexington site"
+    }
+  ],
+  "year": 2024
+}

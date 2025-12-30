@@ -1,0 +1,15 @@
+{
+  "slug": "claude-ai",
+  "title": "Claude by Anthropic",
+  "description": "An AI assistant that feels like a thoughtful collaborator rather than a tool. Changed how I think about building with AI.",
+  "category": "tools",
+  "year": 2024,
+  "whyItMatters": "The first AI tool that felt genuinely useful for creative and technical work without constant hand-holding.",
+  "links": [
+    {
+      "url": "https://claude.ai",
+      "label": "Try Claude"
+    }
+  ],
+  "related": ["cursor-editor", "prompt-engineering"]
+}

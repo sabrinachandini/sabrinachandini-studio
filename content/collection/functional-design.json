@@ -1,0 +1,9 @@
+{
+  "slug": "functional-design",
+  "title": "Functional Design",
+  "description": "Design that serves its purpose without unnecessary ornament. The idea that beauty emerges from utility.",
+  "category": "ideas",
+  "year": 1896,
+  "whyItMatters": "A check against decoration for its own sake. Every element should earn its place.",
+  "related": ["bauhaus-dessau", "grid-systems"]
+}

@@ -1,0 +1,9 @@
+{
+  "slug": "prompt-engineering",
+  "title": "Prompt Engineering",
+  "description": "The art of crafting instructions for AI systems. A new form of writing that's part specification, part conversation.",
+  "category": "ideas",
+  "year": 2023,
+  "whyItMatters": "Learning to communicate clearly with AI has made me a better communicator with humans too.",
+  "related": ["claude-ai", "cursor-editor"]
+}

@@ -1,0 +1,15 @@
+{
+  "slug": "craft-with-anna",
+  "title": "Craft With Anna",
+  "description": "A website that inspired this collection format. Personal and curated, like a cabinet of curiosities.",
+  "category": "ephemera",
+  "year": 2024,
+  "whyItMatters": "A reminder that personal websites can be warm and human, not just portfolios.",
+  "links": [
+    {
+      "url": "https://craftwithanna.com",
+      "label": "Visit site"
+    }
+  ],
+  "related": ["functional-design", "bauhaus-dessau"]
+}

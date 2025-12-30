@@ -1,0 +1,15 @@
+{
+  "slug": "grid-systems",
+  "title": "Grid Systems in Design",
+  "description": "The invisible structure that makes visual information clear and accessible. Order from chaos.",
+  "category": "ideas",
+  "year": 1961,
+  "whyItMatters": "Every good design has a hidden structure. Grids make that structure intentional.",
+  "links": [
+    {
+      "url": "https://www.amazon.com/Grid-Systems-Graphic-Design-Communication/dp/3721201450",
+      "label": "Josef Muller-Brockmann's book"
+    }
+  ],
+  "related": ["bauhaus-dessau", "functional-design"]
+}

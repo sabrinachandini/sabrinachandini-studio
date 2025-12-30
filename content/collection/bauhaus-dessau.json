@@ -1,0 +1,15 @@
+{
+  "slug": "bauhaus-dessau",
+  "title": "Bauhaus Dessau",
+  "description": "The legendary design school that shaped modern design. Form follows function, grid systems, and geometric clarity.",
+  "category": "ideas",
+  "year": 1925,
+  "whyItMatters": "A reminder that constraints and systems can liberate creativity rather than limit it.",
+  "links": [
+    {
+      "url": "https://www.bauhaus-dessau.de/en/",
+      "label": "Bauhaus Dessau Foundation"
+    }
+  ],
+  "related": ["grid-systems", "functional-design"]
+}

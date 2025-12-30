@@ -1,0 +1,41 @@
+{
+  "making": [
+    {
+      "title": "History Is For Everyone",
+      "description": "Building a platform for Revolutionary War-era American towns"
+    },
+    {
+      "title": "Personal site refresh",
+      "description": "This living studio you're looking at now"
+    }
+  ],
+  "learning": [
+    {
+      "title": "Claude and AI assistants",
+      "description": "Exploring how AI tools can augment creative work"
+    },
+    {
+      "title": "Next.js App Router",
+      "description": "Server components, streaming, and modern React patterns"
+    },
+    {
+      "title": "Prompt engineering",
+      "description": "Crafting better instructions for AI collaborators"
+    }
+  ],
+  "collecting": [
+    {
+      "title": "Founders and founding fathers",
+      "description": "Stories of people who built something from nothing"
+    },
+    {
+      "title": "Bauhaus design principles",
+      "description": "Form follows function, grid systems, geometric clarity"
+    },
+    {
+      "title": "AI tool discoveries",
+      "description": "New tools that change how we work and create"
+    }
+  ],
+  "updatedAt": "2024-12-30"
+}

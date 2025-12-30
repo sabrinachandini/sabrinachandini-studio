@@ -1,0 +1,18 @@
+{
+  "slug": "personal-studio",
+  "title": "Living Studio Website",
+  "description": "This site - a personal studio that evolves over time, inspired by Bauhaus design principles.",
+  "intention": "Create a space that feels like a curated collection rather than a static portfolio.",
+  "role": "Designer & Builder",
+  "status": "in-progress",
+  "tags": ["design", "code"],
+  "featured": false,
+  "whatIDid": [
+    "Designed Bauhaus-inspired grid system and typography",
+    "Built interactive Collection feature with modal gallery",
+    "Created Now section for living updates"
+  ],
+  "whatSurprisedMe": "How satisfying it is to build something personal with modern tools.",
+  "nextIteration": "Adding more collection items and experimenting with subtle animations.",
+  "year": 2024
+}

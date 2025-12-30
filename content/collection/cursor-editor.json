@@ -1,0 +1,15 @@
+{
+  "slug": "cursor-editor",
+  "title": "Cursor Editor",
+  "description": "A code editor built around AI assistance. Makes pair programming with AI feel natural.",
+  "category": "tools",
+  "year": 2024,
+  "whyItMatters": "Demonstrated that AI can be deeply integrated into creative tools without being intrusive.",
+  "links": [
+    {
+      "url": "https://cursor.sh",
+      "label": "Cursor"
+    }
+  ],
+  "related": ["claude-ai"]
+}

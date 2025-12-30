@@ -1,36 +1,186 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sabrina Chandini — Living Studio
+
+A personal website built with Next.js 14, inspired by Bauhaus design principles and the "collection" feel of craftwithanna.com.
+
+## Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript (strict mode)
+- **Styling**: Tailwind CSS with custom design tokens
+- **Animation**: Framer Motion (subtle opacity/translate only)
+- **Content**: JSON files with Zod validation
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx           # Home (Studio)
+│   ├── experiments/       # Experiments list + detail
+│   ├── collection/        # Collection gallery
+│   ├── media/             # Media appearances
+│   ├── contact/           # Contact page
+│   └── api/               # API routes for client-side data
+├── components/
+│   ├── layout/            # Header, Footer, SiteLayout
+│   ├── ui/                # Reusable UI components
+│   └── blocks/            # Page-specific blocks
+├── lib/
+│   ├── content.ts         # Content loading utilities
+│   └── utils.ts           # Helper functions
+└── types/
+    └── content.ts         # TypeScript types + Zod schemas
 
-## Learn More
+content/
+├── now/
+│   └── now.json           # Current "Now" section content
+├── experiments/
+│   └── *.json             # Individual experiment files
+└── collection/
+    └── *.json             # Individual collection items
+```
 
-To learn more about Next.js, take a look at the following resources:
+## How to Add Content
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Adding a New Experiment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Create a JSON file in `content/experiments/` with this structure:
 
-## Deploy on Vercel
+```json
+{
+  "slug": "my-project",
+  "title": "My Project",
+  "description": "A one-sentence description of what it is.",
+  "intention": "Why I started this project.",
+  "role": "Founder / Designer / etc.",
+  "status": "in-progress",  // or "shipped" or "archived"
+  "tags": ["product", "code"],  // options: writing, talks, product, code, design, research
+  "featured": true,
+  "whatIDid": [
+    "First thing I built",
+    "Second accomplishment"
+  ],
+  "whatSurprisedMe": "Something unexpected I learned.",
+  "nextIteration": "What's coming next (optional).",
+  "artifacts": [
+    {
+      "type": "live",  // or "github", "doc", "video", "image"
+      "url": "https://example.com",
+      "label": "Live site"
+    }
+  ],
+  "image": "/images/project.jpg",  // optional
+  "year": 2024
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Adding a Collection Item
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Create a JSON file in `content/collection/` with this structure:
+
+```json
+{
+  "slug": "my-item",
+  "title": "Item Name",
+  "description": "What this is and why it's interesting.",
+  "category": "tools",  // options: ephemera, tools, notes, places, people, ideas
+  "year": 2024,
+  "image": "/images/item.jpg",  // optional
+  "whyItMatters": "A deeper explanation (shown in modal).",
+  "links": [
+    {
+      "url": "https://example.com",
+      "label": "Visit"
+    }
+  ],
+  "related": ["other-item-slug"]  // slugs of related items
+}
+```
+
+### Updating the "Now" Section
+
+Edit `content/now/now.json`:
+
+```json
+{
+  "making": [
+    { "title": "Project name", "description": "Brief context" }
+  ],
+  "learning": [
+    { "title": "Topic", "description": "What I'm learning", "link": "https://..." }
+  ],
+  "collecting": [
+    { "title": "Theme", "description": "Why it interests me" }
+  ],
+  "updatedAt": "2024-12-30"
+}
+```
+
+## Design System
+
+### Colors
+
+| Variable | Value | Usage |
+|----------|-------|-------|
+| `--color-bg` | #FAFAFA | Page background |
+| `--color-fg` | #1A1A1A | Primary text |
+| `--color-fg-muted` | #666666 | Secondary text |
+| `--color-secondary` | #C45D3A | Accent (terracotta) |
+| `--color-accent` | #0A0A0A | Primary accent (black) |
+
+### Typography
+
+- **Font**: Inter (sans-serif)
+- **Scale**: 12px, 14px, 16px, 18px, 20px, 24px, 30px, 36px, 48px, 60px
+- **Line heights**: 1.15 (tight), 1.3 (snug), 1.5 (normal), 1.65 (relaxed)
+
+### Grid
+
+- **Max width**: 1200px
+- **Gutter**: 24px
+- **Columns**: 12-column grid on desktop
+
+### Components
+
+- `.container` — Centered content container
+- `.card` — White card with border
+- `.tag-pill` — Small uppercase tag
+- `.btn`, `.btn-primary`, `.btn-secondary` — Buttons
+- `.accent-square` — Small geometric accent (8x8px)
+
+## Deployment
+
+The site is optimized for Vercel deployment:
+
+```bash
+# Deploy to Vercel
+vercel
+```
+
+Or connect your GitHub repository to Vercel for automatic deployments.
+
+## Important Identity Elements
+
+The site's identity statement includes two required ideas:
+1. "Always learning new AI tools"
+2. "Inspired by people creating something new—startup founders or founding fathers"
+
+These appear in the hero section and metadata.

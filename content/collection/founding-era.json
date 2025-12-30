@@ -1,0 +1,9 @@
+{
+  "slug": "founding-era",
+  "title": "The Founding Era",
+  "description": "The period when ordinary people decided to build something new. A time when founders were literally founding a nation.",
+  "category": "ephemera",
+  "year": 1776,
+  "whyItMatters": "The original startup story. Proof that a small group of committed people can change everything.",
+  "related": ["ben-franklin", "paul-revere", "lexington-green"]
+}
