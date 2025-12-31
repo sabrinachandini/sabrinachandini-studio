@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { getInProgressExperiments, getShippedExperiments, getCollection } from '@/lib/content';
+import { getInProgressExperiments, getShippedExperiments, getCollection, getRecentMediaUpdates } from '@/lib/content';
 import {
   getActiveObsession,
   getRecentLogEntries,
@@ -13,6 +13,7 @@ import {
 import { ObsessionModule } from '@/components/blocks/ObsessionModule';
 import { PortfolioModule } from '@/components/blocks/LinkedInModule';
 import { RecentLogModule } from '@/components/blocks/RecentLogModule';
+import { RecentMediaModule } from '@/components/blocks/RecentMediaModule';
 import { CurrentQuestionModule } from '@/components/blocks/CurrentQuestionModule';
 import { ExperimentStrip } from '@/components/blocks/ExperimentStrip';
 import { SectionHeader } from '@/components/ui/SectionHeader';
@@ -29,6 +30,7 @@ export default async function HomePage() {
     linkedInProfile,
     linkedInWork,
     linkedInPosts,
+    recentMedia,
   ] = await Promise.all([
     getActiveObsession(),
     getInProgressExperiments(),
@@ -40,6 +42,7 @@ export default async function HomePage() {
     getLinkedInProfile(),
     getLinkedInWorkExperience(),
     getLinkedInPosts(),
+    getRecentMediaUpdates(4),
   ]);
 
   const collectionTeaser = collection.slice(0, 6);
@@ -101,14 +104,24 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Current Question */}
-      {question && (
-        <section className="container mb-16 md:mb-24">
-          <div className="max-w-xl">
-            <CurrentQuestionModule question={question} notes={questionNotes} />
-          </div>
-        </section>
-      )}
+      {/* Current Question + Media */}
+      <section className="container mb-16 md:mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Current Question */}
+          {question && (
+            <div>
+              <CurrentQuestionModule question={question} notes={questionNotes} />
+            </div>
+          )}
+
+          {/* Recent Media */}
+          {recentMedia.length > 0 && (
+            <div>
+              <RecentMediaModule items={recentMedia} />
+            </div>
+          )}
+        </div>
+      </section>
 
       {/* In Progress */}
       {inProgress.length > 0 && (

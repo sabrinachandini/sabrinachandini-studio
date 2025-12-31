@@ -3,20 +3,42 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import type { Menu, MenuItem } from '@/types/cms';
-import { GripVertical, Plus, Trash2, Eye, EyeOff, Save, ExternalLink } from 'lucide-react';
+import { GripVertical, Plus, Trash2, Eye, EyeOff, Save, ExternalLink, ChevronDown, ChevronRight } from 'lucide-react';
 
 interface MenuEditorProps {
   menus: Menu[];
+  availablePages?: Array<{ slug: string; title: string }>;
 }
 
-export function MenuEditor({ menus: initialMenus }: MenuEditorProps) {
+// Internal routes for quick-add
+const INTERNAL_ROUTES = [
+  { href: '/', label: 'Studio (Home)' },
+  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/experiments', label: 'Experiments' },
+  { href: '/collection', label: 'Collection' },
+  { href: '/media', label: 'Media' },
+  { href: '/question', label: 'Question' },
+  { href: '/log', label: 'Build Log' },
+  { href: '/guestbook', label: 'Guestbook' },
+  { href: '/contact', label: 'Contact' },
+  { href: '/index', label: 'Index (All)' },
+];
+
+export function MenuEditor({ menus: initialMenus, availablePages = [] }: MenuEditorProps) {
   const router = useRouter();
   const [menus, setMenus] = useState(initialMenus);
   const [activeMenuId, setActiveMenuId] = useState(initialMenus[0]?.id || '');
   const [isSaving, setIsSaving] = useState(false);
   const [hasChanges, setHasChanges] = useState(false);
+  const [showQuickAdd, setShowQuickAdd] = useState(false);
+  const [quickAddLabel, setQuickAddLabel] = useState('');
+  const [quickAddHref, setQuickAddHref] = useState('');
+  const [quickAddGroup, setQuickAddGroup] = useState<'main' | 'more'>('main');
 
   const activeMenu = menus.find((m) => m.id === activeMenuId);
+
+  const mainItems = activeMenu?.items.filter((i) => i.group !== 'more') || [];
+  const moreItems = activeMenu?.items.filter((i) => i.group === 'more') || [];
 
   const handleSave = async () => {
     if (!activeMenu) return;
@@ -52,53 +74,172 @@ export function MenuEditor({ menus: initialMenus }: MenuEditorProps) {
     setHasChanges(true);
   };
 
-  const addItem = () => {
-    if (!activeMenu) return;
+  const addItem = (label: string, href: string, group: 'main' | 'more' = 'main') => {
+    if (!activeMenu || !label.trim() || !href.trim()) return;
+
+    const groupItems = group === 'more' ? moreItems : mainItems;
+    const maxOrder = Math.max(...activeMenu.items.map((i) => i.order), -1);
 
     const newItem: MenuItem = {
       id: `nav-${Date.now()}`,
-      label: 'New Link',
-      href: '/',
-      order: activeMenu.items.length,
+      label: label.trim(),
+      href: href.trim(),
+      order: maxOrder + 1,
       visible: true,
+      group,
     };
 
     updateItems([...activeMenu.items, newItem]);
+    setQuickAddLabel('');
+    setQuickAddHref('');
+    setShowQuickAdd(false);
   };
 
-  const updateItem = (index: number, updates: Partial<MenuItem>) => {
+  const updateItem = (id: string, updates: Partial<MenuItem>) => {
     if (!activeMenu) return;
 
-    const newItems = [...activeMenu.items];
-    newItems[index] = { ...newItems[index], ...updates };
+    const newItems = activeMenu.items.map((item) =>
+      item.id === id ? { ...item, ...updates } : item
+    );
     updateItems(newItems);
   };
 
-  const removeItem = (index: number) => {
+  const removeItem = (id: string) => {
     if (!activeMenu) return;
-    updateItems(activeMenu.items.filter((_, i) => i !== index));
+    updateItems(activeMenu.items.filter((i) => i.id !== id));
   };
 
-  const moveItem = (fromIndex: number, toIndex: number) => {
-    if (!activeMenu || toIndex < 0 || toIndex >= activeMenu.items.length) return;
+  const moveItem = (id: string, direction: 'up' | 'down') => {
+    if (!activeMenu) return;
 
-    const newItems = [...activeMenu.items];
-    const [moved] = newItems.splice(fromIndex, 1);
-    newItems.splice(toIndex, 0, moved);
+    const item = activeMenu.items.find((i) => i.id === id);
+    if (!item) return;
 
-    // Update order values
-    const reordered = newItems.map((item, i) => ({ ...item, order: i }));
-    updateItems(reordered);
+    const groupItems = item.group === 'more' ? moreItems : mainItems;
+    const sortedGroup = [...groupItems].sort((a, b) => a.order - b.order);
+    const currentIndex = sortedGroup.findIndex((i) => i.id === id);
+    const newIndex = direction === 'up' ? currentIndex - 1 : currentIndex + 1;
+
+    if (newIndex < 0 || newIndex >= sortedGroup.length) return;
+
+    // Swap orders
+    const targetItem = sortedGroup[newIndex];
+    const newItems = activeMenu.items.map((i) => {
+      if (i.id === id) return { ...i, order: targetItem.order };
+      if (i.id === targetItem.id) return { ...i, order: item.order };
+      return i;
+    });
+
+    updateItems(newItems);
+  };
+
+  const moveToGroup = (id: string, newGroup: 'main' | 'more') => {
+    if (!activeMenu) return;
+
+    const targetGroupItems = newGroup === 'more' ? moreItems : mainItems;
+    const maxOrder = Math.max(...targetGroupItems.map((i) => i.order), -1);
+
+    updateItem(id, { group: newGroup, order: maxOrder + 1 });
+  };
+
+  const renderItemRow = (item: MenuItem, groupItems: MenuItem[]) => {
+    const sortedGroup = [...groupItems].sort((a, b) => a.order - b.order);
+    const index = sortedGroup.findIndex((i) => i.id === item.id);
+
+    return (
+      <li key={item.id} className="flex items-center gap-2 p-3 hover:bg-[var(--color-bg-alt)]">
+        {/* Reorder */}
+        <div className="flex flex-col gap-0.5">
+          <button
+            onClick={() => moveItem(item.id, 'up')}
+            disabled={index === 0}
+            className="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] disabled:opacity-30 text-xs"
+          >
+            ↑
+          </button>
+          <button
+            onClick={() => moveItem(item.id, 'down')}
+            disabled={index === sortedGroup.length - 1}
+            className="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] disabled:opacity-30 text-xs"
+          >
+            ↓
+          </button>
+        </div>
+
+        <GripVertical size={14} className="text-[var(--color-fg-muted)]" />
+
+        {/* Label */}
+        <input
+          type="text"
+          value={item.label}
+          onChange={(e) => updateItem(item.id, { label: e.target.value })}
+          className="w-28 px-2 py-1 border border-[var(--color-border)] rounded text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)]"
+          placeholder="Label"
+        />
+
+        {/* URL */}
+        <input
+          type="text"
+          value={item.href}
+          onChange={(e) => updateItem(item.id, { href: e.target.value })}
+          className="flex-1 px-2 py-1 border border-[var(--color-border)] rounded text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)]"
+          placeholder="/path"
+        />
+
+        {/* Group toggle */}
+        <button
+          onClick={() => moveToGroup(item.id, item.group === 'more' ? 'main' : 'more')}
+          className="px-2 py-1 text-xs border border-[var(--color-border)] rounded hover:bg-[var(--color-bg-alt)]"
+          title={item.group === 'more' ? 'Move to main nav' : 'Move to More dropdown'}
+        >
+          {item.group === 'more' ? '← Main' : 'More →'}
+        </button>
+
+        {/* External */}
+        <button
+          onClick={() => updateItem(item.id, { external: !item.external })}
+          className={`p-1.5 rounded ${
+            item.external
+              ? 'bg-blue-100 text-blue-600'
+              : 'text-[var(--color-fg-muted)] hover:bg-[var(--color-bg-alt)]'
+          }`}
+          title={item.external ? 'Opens in new tab' : 'Same tab'}
+        >
+          <ExternalLink size={12} />
+        </button>
+
+        {/* Visibility */}
+        <button
+          onClick={() => updateItem(item.id, { visible: !item.visible })}
+          className={`p-1.5 rounded ${
+            item.visible
+              ? 'text-[var(--color-fg-muted)] hover:bg-[var(--color-bg-alt)]'
+              : 'bg-amber-100 text-amber-600'
+          }`}
+          title={item.visible ? 'Visible' : 'Hidden'}
+        >
+          {item.visible ? <Eye size={12} /> : <EyeOff size={12} />}
+        </button>
+
+        {/* Delete */}
+        <button
+          onClick={() => removeItem(item.id)}
+          className="p-1.5 text-red-500 hover:text-red-700 hover:bg-red-50 rounded"
+        >
+          <Trash2 size={12} />
+        </button>
+      </li>
+    );
   };
 
   return (
     <div className="space-y-6">
-      {/* Menu Selector */}
+      {/* Header */}
       <div className="flex items-center gap-4">
         <select
           value={activeMenuId}
           onChange={(e) => setActiveMenuId(e.target.value)}
-          className="px-3 py-2 border border-[var(--color-border)] rounded-lg bg-white"
+          className="px-3 py-2 border border-[var(--color-border)] rounded-lg bg-white text-sm"
         >
           {menus.map((menu) => (
             <option key={menu.id} value={menu.id}>
@@ -114,119 +255,164 @@ export function MenuEditor({ menus: initialMenus }: MenuEditorProps) {
         <div className="flex-1" />
 
         <button
+          onClick={() => setShowQuickAdd(!showQuickAdd)}
+          className="flex items-center gap-1 px-3 py-2 text-sm border border-[var(--color-border)] rounded-lg hover:bg-[var(--color-bg-alt)]"
+        >
+          <Plus size={14} />
+          Add Item
+        </button>
+
+        <button
           onClick={handleSave}
           disabled={!hasChanges || isSaving}
-          className="flex items-center gap-2 px-4 py-2 bg-[var(--color-secondary)] text-white rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
+          className="flex items-center gap-2 px-4 py-2 bg-[var(--color-secondary)] text-white rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 text-sm"
         >
-          <Save size={16} />
-          {isSaving ? 'Saving...' : 'Save Menu'}
+          <Save size={14} />
+          {isSaving ? 'Saving...' : 'Save'}
         </button>
       </div>
 
-      {/* Menu Items */}
-      {activeMenu && (
-        <div className="bg-white border border-[var(--color-border)] rounded-lg overflow-hidden">
-          {activeMenu.items.length === 0 ? (
-            <div className="p-8 text-center text-[var(--color-fg-muted)]">
-              No menu items yet. Add your first link below.
+      {/* Quick Add Form */}
+      {showQuickAdd && (
+        <div className="bg-white border border-[var(--color-border)] rounded-lg p-4 space-y-4">
+          <h3 className="font-medium text-sm">Quick Add Nav Item</h3>
+
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs text-[var(--color-fg-muted)] mb-1">Label</label>
+              <input
+                type="text"
+                value={quickAddLabel}
+                onChange={(e) => setQuickAddLabel(e.target.value)}
+                placeholder="e.g., About"
+                className="w-full px-3 py-2 border border-[var(--color-border)] rounded-lg text-sm"
+              />
             </div>
-          ) : (
-            <ul className="divide-y divide-[var(--color-border)]">
-              {activeMenu.items
-                .sort((a, b) => a.order - b.order)
-                .map((item, index) => (
-                  <li key={item.id} className="flex items-center gap-3 p-4">
-                    {/* Drag handle */}
-                    <div className="flex flex-col gap-0.5">
-                      <button
-                        onClick={() => moveItem(index, index - 1)}
-                        disabled={index === 0}
-                        className="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] disabled:opacity-30"
-                      >
-                        ↑
-                      </button>
-                      <button
-                        onClick={() => moveItem(index, index + 1)}
-                        disabled={index === activeMenu.items.length - 1}
-                        className="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] disabled:opacity-30"
-                      >
-                        ↓
-                      </button>
-                    </div>
-
-                    <GripVertical size={16} className="text-[var(--color-fg-muted)]" />
-
-                    {/* Label */}
-                    <input
-                      type="text"
-                      value={item.label}
-                      onChange={(e) => updateItem(index, { label: e.target.value })}
-                      className="flex-1 px-3 py-1.5 border border-[var(--color-border)] rounded focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)]"
-                      placeholder="Label"
-                    />
-
-                    {/* URL */}
-                    <input
-                      type="text"
-                      value={item.href}
-                      onChange={(e) => updateItem(index, { href: e.target.value })}
-                      className="flex-1 px-3 py-1.5 border border-[var(--color-border)] rounded text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)]"
-                      placeholder="/path or https://..."
-                    />
-
-                    {/* External link toggle */}
-                    <button
-                      onClick={() => updateItem(index, { external: !item.external })}
-                      className={`p-2 rounded ${
-                        item.external
-                          ? 'bg-blue-100 text-blue-600'
-                          : 'text-[var(--color-fg-muted)] hover:bg-[var(--color-bg-alt)]'
-                      }`}
-                      title={item.external ? 'Opens in new tab' : 'Opens in same tab'}
-                    >
-                      <ExternalLink size={14} />
-                    </button>
-
-                    {/* Visibility toggle */}
-                    <button
-                      onClick={() => updateItem(index, { visible: !item.visible })}
-                      className={`p-2 rounded ${
-                        item.visible
-                          ? 'text-[var(--color-fg-muted)] hover:bg-[var(--color-bg-alt)]'
-                          : 'bg-amber-100 text-amber-600'
-                      }`}
-                      title={item.visible ? 'Visible' : 'Hidden'}
-                    >
-                      {item.visible ? <Eye size={14} /> : <EyeOff size={14} />}
-                    </button>
-
-                    {/* Delete */}
-                    <button
-                      onClick={() => removeItem(index)}
-                      className="p-2 text-red-500 hover:text-red-700 hover:bg-red-50 rounded"
-                    >
-                      <Trash2 size={14} />
-                    </button>
-                  </li>
+            <div>
+              <label className="block text-xs text-[var(--color-fg-muted)] mb-1">URL</label>
+              <input
+                type="text"
+                value={quickAddHref}
+                onChange={(e) => setQuickAddHref(e.target.value)}
+                placeholder="/about or https://..."
+                className="w-full px-3 py-2 border border-[var(--color-border)] rounded-lg text-sm"
+                list="route-suggestions"
+              />
+              <datalist id="route-suggestions">
+                {INTERNAL_ROUTES.map((route) => (
+                  <option key={route.href} value={route.href}>
+                    {route.label}
+                  </option>
                 ))}
-            </ul>
-          )}
+                {availablePages.map((page) => (
+                  <option key={page.slug} value={`/${page.slug}`}>
+                    {page.title}
+                  </option>
+                ))}
+              </datalist>
+            </div>
+          </div>
 
-          {/* Add item */}
-          <div className="p-4 border-t border-[var(--color-border)] bg-[var(--color-bg-alt)]">
+          <div className="flex items-center gap-4">
+            <label className="flex items-center gap-2 text-sm">
+              <input
+                type="radio"
+                name="group"
+                checked={quickAddGroup === 'main'}
+                onChange={() => setQuickAddGroup('main')}
+              />
+              Main Nav
+            </label>
+            <label className="flex items-center gap-2 text-sm">
+              <input
+                type="radio"
+                name="group"
+                checked={quickAddGroup === 'more'}
+                onChange={() => setQuickAddGroup('more')}
+              />
+              More Dropdown
+            </label>
+          </div>
+
+          <div className="flex items-center gap-2">
             <button
-              onClick={addItem}
-              className="flex items-center gap-2 text-sm text-[var(--color-secondary)] hover:underline"
+              onClick={() => addItem(quickAddLabel, quickAddHref, quickAddGroup)}
+              disabled={!quickAddLabel.trim() || !quickAddHref.trim()}
+              className="px-4 py-2 bg-[var(--color-secondary)] text-white rounded-lg text-sm disabled:opacity-50"
             >
-              <Plus size={14} />
-              Add Menu Item
+              Add
             </button>
+            <button
+              onClick={() => setShowQuickAdd(false)}
+              className="px-4 py-2 text-[var(--color-fg-muted)] text-sm"
+            >
+              Cancel
+            </button>
+          </div>
+
+          {/* Quick add from existing pages */}
+          <div className="border-t border-[var(--color-border)] pt-4">
+            <p className="text-xs text-[var(--color-fg-muted)] mb-2">Or quick-add from routes:</p>
+            <div className="flex flex-wrap gap-2">
+              {INTERNAL_ROUTES.filter(
+                (route) => !activeMenu?.items.some((i) => i.href === route.href)
+              ).slice(0, 6).map((route) => (
+                <button
+                  key={route.href}
+                  onClick={() => addItem(route.label.split(' (')[0], route.href, quickAddGroup)}
+                  className="px-2 py-1 text-xs border border-[var(--color-border)] rounded hover:bg-[var(--color-bg-alt)]"
+                >
+                  + {route.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       )}
 
-      <p className="text-sm text-[var(--color-fg-muted)]">
-        Tip: Use external links for full URLs (https://...) and internal paths for site pages (/about, /contact).
+      {/* Menu Items */}
+      {activeMenu && (
+        <div className="space-y-4">
+          {/* Main Nav */}
+          <div className="bg-white border border-[var(--color-border)] rounded-lg overflow-hidden">
+            <div className="px-4 py-2 bg-[var(--color-bg-alt)] border-b border-[var(--color-border)] flex items-center gap-2">
+              <ChevronRight size={14} />
+              <span className="text-sm font-medium">Main Navigation</span>
+              <span className="text-xs text-[var(--color-fg-muted)]">({mainItems.length})</span>
+            </div>
+            {mainItems.length === 0 ? (
+              <div className="p-4 text-sm text-[var(--color-fg-muted)]">No main nav items</div>
+            ) : (
+              <ul className="divide-y divide-[var(--color-border)]">
+                {mainItems
+                  .sort((a, b) => a.order - b.order)
+                  .map((item) => renderItemRow(item, mainItems))}
+              </ul>
+            )}
+          </div>
+
+          {/* More Dropdown */}
+          <div className="bg-white border border-[var(--color-border)] rounded-lg overflow-hidden">
+            <div className="px-4 py-2 bg-[var(--color-bg-alt)] border-b border-[var(--color-border)] flex items-center gap-2">
+              <ChevronDown size={14} />
+              <span className="text-sm font-medium">More Dropdown</span>
+              <span className="text-xs text-[var(--color-fg-muted)]">({moreItems.length})</span>
+            </div>
+            {moreItems.length === 0 ? (
+              <div className="p-4 text-sm text-[var(--color-fg-muted)]">No dropdown items</div>
+            ) : (
+              <ul className="divide-y divide-[var(--color-border)]">
+                {moreItems
+                  .sort((a, b) => a.order - b.order)
+                  .map((item) => renderItemRow(item, moreItems))}
+              </ul>
+            )}
+          </div>
+        </div>
+      )}
+
+      <p className="text-xs text-[var(--color-fg-muted)]">
+        Tip: Keep main nav tidy (5-7 items). Move less-used links to "More" dropdown.
       </p>
     </div>
   );

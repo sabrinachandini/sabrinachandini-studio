@@ -159,6 +159,8 @@ export const MenuItemSchema = z.object({
   order: z.number(),
   visible: z.boolean().default(true),
   external: z.boolean().optional(),
+  group: z.enum(['main', 'more']).default('main'),
+  icon: z.string().optional(),
 });
 
 export const MenuSchema = z.object({

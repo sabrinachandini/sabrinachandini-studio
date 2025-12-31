@@ -14,6 +14,7 @@ import {
   Settings,
   ArrowRight,
   AlertCircle,
+  Activity,
 } from 'lucide-react';
 
 export default async function AdminPage() {
@@ -74,7 +75,7 @@ export default async function AdminPage() {
         )}
 
         {/* Quick Actions */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
           <Link
             href="/admin/pages"
             className="bg-white border border-[var(--color-border)] rounded-lg p-4 hover:border-[var(--color-border-strong)] transition-colors group"
@@ -98,6 +99,14 @@ export default async function AdminPage() {
             <Menu size={24} className="text-[var(--color-fg-muted)] mb-2 group-hover:text-[var(--color-secondary)]" />
             <h3 className="font-medium text-sm">Menus</h3>
             <p className="text-xs text-[var(--color-fg-muted)]">Edit navigation</p>
+          </Link>
+          <Link
+            href="/admin/analytics"
+            className="bg-white border border-[var(--color-border)] rounded-lg p-4 hover:border-[var(--color-border-strong)] transition-colors group"
+          >
+            <Activity size={24} className="text-[var(--color-fg-muted)] mb-2 group-hover:text-[var(--color-secondary)]" />
+            <h3 className="font-medium text-sm">Analytics</h3>
+            <p className="text-xs text-[var(--color-fg-muted)]">PostHog stats</p>
           </Link>
           <Link
             href="/admin/settings"

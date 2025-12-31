@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import { SiteLayout } from '@/components/layout/SiteLayout';
+import { PostHogProvider } from '@/components/providers/PostHogProvider';
 import './globals.css';
 
 const inter = Inter({
@@ -52,7 +54,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="antialiased">
-        <SiteLayout>{children}</SiteLayout>
+        <Suspense fallback={null}>
+          <PostHogProvider>
+            <SiteLayout>{children}</SiteLayout>
+          </PostHogProvider>
+        </Suspense>
       </body>
     </html>
   );
