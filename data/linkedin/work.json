@@ -1,0 +1,22 @@
+[
+  {
+    "id": "work-1767132315914-nkiu8",
+    "companyName": "Lexington250",
+    "title": "Founder/CEO",
+    "startDate": "August 2023",
+    "endDate": "current",
+    "description": "Lexington250 is dedicated to celebrating the 250th anniversary of the Battle of Lexington. Going from t-shirts to a known social media account, it has been featured in the NYT, BBC, and iHeart Radio.",
+    "createdAt": "2025-12-30T22:05:15.914Z",
+    "updatedAt": "2025-12-30T22:05:15.914Z"
+  },
+  {
+    "companyName": "AgendaHero",
+    "title": "Intern",
+    "startDate": "June 2025",
+    "endDate": "September 2025",
+    "description": "I helped AgendaHero get ready for their big launch by testing products and creating calendars.",
+    "id": "work-1767132384601-t9r3h",
+    "createdAt": "2025-12-30T22:06:24.600Z",
+    "updatedAt": "2025-12-30T22:06:24.600Z"
+  }
+]

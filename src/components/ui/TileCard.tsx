@@ -18,6 +18,7 @@ interface TileCardProps {
   hoverContent?: {
     intention?: string;
     surprise?: string;
+    changedMyMind?: string;
     next?: string;
   };
   onClick?: () => void;
@@ -129,7 +130,17 @@ export function TileCard({
               </p>
             </div>
           )}
-          {hoverContent.surprise && (
+          {hoverContent.changedMyMind && (
+            <div className="mb-3">
+              <span className="text-xs font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
+                Changed My Mind
+              </span>
+              <p className="text-sm text-[var(--color-fg)] mt-1">
+                {hoverContent.changedMyMind}
+              </p>
+            </div>
+          )}
+          {hoverContent.surprise && !hoverContent.changedMyMind && (
             <div className="mb-3">
               <span className="text-xs font-semibold uppercase tracking-wide text-[var(--color-fg-subtle)]">
                 Surprise

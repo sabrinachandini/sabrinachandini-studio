@@ -29,9 +29,10 @@ export function ExperimentStrip({
           status={experiment.status}
           year={experiment.year}
           hoverContent={
-            experiment.intention || experiment.whatSurprisedMe || experiment.nextIteration
+            experiment.intention || experiment.whatChangedMyMind || experiment.whatSurprisedMe || experiment.nextIteration
               ? {
                   intention: experiment.intention,
+                  changedMyMind: experiment.whatChangedMyMind,
                   surprise: experiment.whatSurprisedMe,
                   next: experiment.nextIteration,
                 }

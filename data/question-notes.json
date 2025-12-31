@@ -1,0 +1,134 @@
+[
+  {
+    "id": "qn-001",
+    "questionSlug": "starting-something-new",
+    "date": "2024-12-28",
+    "type": "principle",
+    "tracks": ["both"],
+    "title": "Start with what it will look like",
+    "body": "Don't start with the system. Start with what someone will see and feel. AgendaHero started with a screenshot mock, not a database schema. The Declaration of Independence was written for the ear, not the archive.",
+    "whatChangedMyMind": "I used to think you needed the architecture first. Watching founders ship changed that—the best ones draw the screen before they write the code.",
+    "createdAt": "2024-12-28T00:00:00Z",
+    "updatedAt": "2024-12-28T00:00:00Z"
+  },
+  {
+    "id": "qn-002",
+    "questionSlug": "starting-something-new",
+    "date": "2024-12-27",
+    "type": "tool",
+    "tracks": ["startups"],
+    "title": "What tools can do that",
+    "body": "The right tool collapses timelines. Claude Code lets me build in hours what used to take weeks. KINO picked the fastest path to video editing AI. The tool choice IS the strategy.",
+    "whatChangedMyMind": "I thought tool selection was a tactical decision. It's actually strategic—it determines what's even possible to attempt.",
+    "links": [
+      { "url": "https://kino.ai", "label": "KINO" }
+    ],
+    "createdAt": "2024-12-27T00:00:00Z",
+    "updatedAt": "2024-12-27T00:00:00Z"
+  },
+  {
+    "id": "qn-003",
+    "questionSlug": "starting-something-new",
+    "date": "2024-12-26",
+    "type": "whos-doing-it-well",
+    "tracks": ["startups"],
+    "title": "AgendaHero: Calendar-first thinking",
+    "body": "AgendaHero doesn't try to be everything. It's a calendar. That constraint is the product. They started with one question: what if your schedule was the interface?",
+    "whatChangedMyMind": "Constraint isn't limitation—it's a forcing function for clarity. The narrower the wedge, the faster you can drive it in.",
+    "links": [
+      { "url": "https://agendahero.com", "label": "AgendaHero" }
+    ],
+    "createdAt": "2024-12-26T00:00:00Z",
+    "updatedAt": "2024-12-26T00:00:00Z"
+  },
+  {
+    "id": "qn-004",
+    "questionSlug": "starting-something-new",
+    "date": "2024-12-25",
+    "type": "example",
+    "tracks": ["history"],
+    "title": "Lexington: The first shot was local",
+    "body": "April 19, 1775 wasn't a national movement. It was 77 farmers on a town green. The Revolution started hyperlocal. Lexington250.com exists because that's still how things change—one place, fully committed.",
+    "whatChangedMyMind": "Scale is seductive. But nothing scales until it works in one place first. Lexington was proof of concept for a nation.",
+    "links": [
+      { "url": "https://lexington.historyisforeveryone.com", "label": "Lexington 250" }
+    ],
+    "createdAt": "2024-12-25T00:00:00Z",
+    "updatedAt": "2024-12-25T00:00:00Z"
+  },
+  {
+    "id": "qn-005",
+    "questionSlug": "starting-something-new",
+    "date": "2024-12-24",
+    "type": "pattern",
+    "tracks": ["both"],
+    "title": "Small teams move faster",
+    "body": "The Continental Congress had 56 signers. Most startups that ship have under 10 people. Coordination costs compound. Keep the room small until you can't.",
+    "whatChangedMyMind": "I used to think more people = more capability. It's actually more people = more alignment overhead. The math flips fast.",
+    "createdAt": "2024-12-24T00:00:00Z",
+    "updatedAt": "2024-12-24T00:00:00Z"
+  },
+  {
+    "id": "qn-006",
+    "questionSlug": "starting-something-new",
+    "date": "2024-12-23",
+    "type": "whos-doing-it-well",
+    "tracks": ["startups"],
+    "title": "KINO: Bet on the technology shift",
+    "body": "KINO saw video AI coming and positioned for it. They didn't build features—they built for a future that's arriving. Timing is a choice.",
+    "whatChangedMyMind": "You can't time the market, but you can choose which wave to catch. KINO chose right by choosing early.",
+    "links": [
+      { "url": "https://kino.ai", "label": "KINO" }
+    ],
+    "createdAt": "2024-12-23T00:00:00Z",
+    "updatedAt": "2024-12-23T00:00:00Z"
+  },
+  {
+    "id": "qn-007",
+    "questionSlug": "starting-something-new",
+    "date": "2024-12-22",
+    "type": "principle",
+    "tracks": ["both"],
+    "title": "Ship something people can react to",
+    "body": "Paul Revere didn't write a manifesto. He rode. The act was the message. In startups, shipping is communication. A live product says more than a pitch deck.",
+    "whatChangedMyMind": "Feedback on ideas is cheap. Feedback on shipped work is gold. People tell you the truth when they're using something real.",
+    "createdAt": "2024-12-22T00:00:00Z",
+    "updatedAt": "2024-12-22T00:00:00Z"
+  },
+  {
+    "id": "qn-008",
+    "questionSlug": "starting-something-new",
+    "date": "2024-12-21",
+    "type": "question",
+    "tracks": ["both"],
+    "title": "Who else has tried this?",
+    "body": "Every new thing has been attempted before. Find the people who tried and failed. They have the map of landmines.",
+    "whatChangedMyMind": "Originality is overrated. Learning from failed attempts is underrated. The graveyard of startups is full of useful lessons.",
+    "createdAt": "2024-12-21T00:00:00Z",
+    "updatedAt": "2024-12-21T00:00:00Z"
+  },
+  {
+    "id": "qn-009",
+    "questionSlug": "starting-something-new",
+    "date": "2024-12-20",
+    "type": "counterexample",
+    "tracks": ["startups"],
+    "title": "The over-planned launch",
+    "body": "Seen too many founders wait for perfect. Perfect branding, perfect feature set, perfect timing. Meanwhile, someone scrappier shipped and learned.",
+    "whatChangedMyMind": "Perfectionism looks like quality but acts like fear. The scrappy launch teaches you what the perfect plan never will.",
+    "createdAt": "2024-12-20T00:00:00Z",
+    "updatedAt": "2024-12-20T00:00:00Z"
+  },
+  {
+    "id": "qn-010",
+    "questionSlug": "starting-something-new",
+    "date": "2024-12-19",
+    "type": "pattern",
+    "tracks": ["history"],
+    "title": "The pamphlet strategy",
+    "body": "Common Sense wasn't long. It was readable. Tom Paine knew the format mattered as much as the argument. Distribution is part of the product.",
+    "whatChangedMyMind": "Great ideas in wrong formats die quietly. Paine's genius was packaging—making complex arguments into something you could pass to a neighbor.",
+    "createdAt": "2024-12-19T00:00:00Z",
+    "updatedAt": "2024-12-19T00:00:00Z"
+  }
+]

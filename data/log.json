@@ -1,0 +1,103 @@
+[
+  {
+    "id": "log-012",
+    "dateTime": "2024-12-30T14:00:00Z",
+    "text": "Shipped verbatim content layer with source provenance tracking",
+    "tags": ["code", "content"],
+    "createdAt": "2024-12-30T14:00:00Z",
+    "updatedAt": "2024-12-30T14:00:00Z"
+  },
+  {
+    "id": "log-011",
+    "dateTime": "2024-12-30T10:00:00Z",
+    "text": "Added diff test script—now I can catch content drift automatically",
+    "tags": ["code", "testing"],
+    "whatChangedMyMind": "Thought automated content checks were overkill. Then I manually compared strings for an hour.",
+    "createdAt": "2024-12-30T10:00:00Z",
+    "updatedAt": "2024-12-30T10:00:00Z"
+  },
+  {
+    "id": "log-010",
+    "dateTime": "2024-12-29T16:00:00Z",
+    "text": "Built the media timeline with year navigation",
+    "tags": ["design", "code"],
+    "createdAt": "2024-12-29T16:00:00Z",
+    "updatedAt": "2024-12-29T16:00:00Z"
+  },
+  {
+    "id": "log-009",
+    "dateTime": "2024-12-29T11:00:00Z",
+    "text": "Redesigned collection modal—less clutter, more breathing room",
+    "tags": ["design"],
+    "whatChangedMyMind": "I kept adding info to the modal. Then stripped it back. The restraint is the design.",
+    "createdAt": "2024-12-29T11:00:00Z",
+    "updatedAt": "2024-12-29T11:00:00Z"
+  },
+  {
+    "id": "log-008",
+    "dateTime": "2024-12-28T15:00:00Z",
+    "text": "Fixed Suspense boundary bug in experiments filter",
+    "tags": ["code", "bug"],
+    "createdAt": "2024-12-28T15:00:00Z",
+    "updatedAt": "2024-12-28T15:00:00Z"
+  },
+  {
+    "id": "log-007",
+    "dateTime": "2024-12-28T09:00:00Z",
+    "text": "Wrote 10 question notes on 'starting something new'",
+    "tags": ["writing", "content"],
+    "whatChangedMyMind": "Thought I'd do 3 notes. Once I started, the connections kept coming.",
+    "createdAt": "2024-12-28T09:00:00Z",
+    "updatedAt": "2024-12-28T09:00:00Z"
+  },
+  {
+    "id": "log-006",
+    "dateTime": "2024-12-27T14:00:00Z",
+    "text": "Rebuilt the Studio grid with proper 12-column Bauhaus alignment",
+    "tags": ["design", "code"],
+    "createdAt": "2024-12-27T14:00:00Z",
+    "updatedAt": "2024-12-27T14:00:00Z"
+  },
+  {
+    "id": "log-005",
+    "dateTime": "2024-12-26T16:00:00Z",
+    "text": "Added Lexington 250 to experiments—feels good to document shipped work",
+    "tags": ["content"],
+    "createdAt": "2024-12-26T16:00:00Z",
+    "updatedAt": "2024-12-26T16:00:00Z"
+  },
+  {
+    "id": "log-004",
+    "dateTime": "2024-12-25T11:00:00Z",
+    "text": "Created collection items for Bauhaus influences",
+    "tags": ["content", "design"],
+    "whatChangedMyMind": "Started to add 20 items. Realized curation > quantity. Kept 12.",
+    "createdAt": "2024-12-25T11:00:00Z",
+    "updatedAt": "2024-12-25T11:00:00Z"
+  },
+  {
+    "id": "log-003",
+    "dateTime": "2024-12-24T13:00:00Z",
+    "text": "Deployed first version of the site—nervous but excited",
+    "tags": ["milestone"],
+    "createdAt": "2024-12-24T13:00:00Z",
+    "updatedAt": "2024-12-24T13:00:00Z"
+  },
+  {
+    "id": "log-002",
+    "dateTime": "2024-12-23T10:00:00Z",
+    "text": "Chose terracotta as secondary accent—Bauhaus Dessau inspiration",
+    "tags": ["design"],
+    "whatChangedMyMind": "Almost went with blue. Then saw photos of the Dessau building. Terracotta it is.",
+    "createdAt": "2024-12-23T10:00:00Z",
+    "updatedAt": "2024-12-23T10:00:00Z"
+  },
+  {
+    "id": "log-001",
+    "dateTime": "2024-12-22T09:00:00Z",
+    "text": "Started the living studio rebuild—blank Next.js canvas",
+    "tags": ["milestone", "code"],
+    "createdAt": "2024-12-22T09:00:00Z",
+    "updatedAt": "2024-12-22T09:00:00Z"
+  }
+]

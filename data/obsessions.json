@@ -1,0 +1,19 @@
+[
+  {
+    "id": "obs-2024-12",
+    "month": "2025-12",
+    "title": "Claude Code",
+    "type": "tool",
+    "oneLiner": "Empowering people who never had access to building to create.",
+    "whyNow": "Right now it's all about speed—Claude is fast at making large data structures. I can describe what I want and watch it build in real time. That changes who gets to make things.",
+    "links": [
+      {
+        "url": "https://claude.ai",
+        "label": "Claude"
+      }
+    ],
+    "status": "active",
+    "createdAt": "2024-12-01T00:00:00Z",
+    "updatedAt": "2025-12-30T22:02:26.014Z"
+  }
+]

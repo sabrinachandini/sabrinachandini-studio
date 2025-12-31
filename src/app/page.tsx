@@ -1,16 +1,45 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { getNow, getInProgressExperiments, getShippedExperiments, getCollection } from '@/lib/content';
-import { NowModule } from '@/components/blocks/NowModule';
+import { getInProgressExperiments, getShippedExperiments, getCollection } from '@/lib/content';
+import {
+  getActiveObsession,
+  getRecentLogEntries,
+  getQuestion,
+  getRecentQuestionNotes,
+  getLinkedInProfile,
+  getLinkedInWorkExperience,
+  getLinkedInPosts,
+} from '@/lib/data';
+import { ObsessionModule } from '@/components/blocks/ObsessionModule';
+import { PortfolioModule } from '@/components/blocks/LinkedInModule';
+import { RecentLogModule } from '@/components/blocks/RecentLogModule';
+import { CurrentQuestionModule } from '@/components/blocks/CurrentQuestionModule';
 import { ExperimentStrip } from '@/components/blocks/ExperimentStrip';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 
 export default async function HomePage() {
-  const [now, inProgress, shipped, collection] = await Promise.all([
-    getNow(),
+  const [
+    obsession,
+    inProgress,
+    shipped,
+    collection,
+    logEntries,
+    question,
+    questionNotes,
+    linkedInProfile,
+    linkedInWork,
+    linkedInPosts,
+  ] = await Promise.all([
+    getActiveObsession(),
     getInProgressExperiments(),
     getShippedExperiments(),
     getCollection(),
+    getRecentLogEntries(7),
+    getQuestion('starting-something-new'),
+    getRecentQuestionNotes(3),
+    getLinkedInProfile(),
+    getLinkedInWorkExperience(),
+    getLinkedInPosts(),
   ]);
 
   const collectionTeaser = collection.slice(0, 6);
@@ -40,14 +69,46 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Now Section */}
+      {/* Obsession Section */}
+      {obsession && (
+        <section className="container mb-16 md:mb-24">
+          <SectionHeader
+            title={`Obsession — ${new Date(obsession.month + '-01').toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`}
+            subtitle="What I can't stop thinking about right now."
+          />
+          <div className="max-w-xl">
+            <ObsessionModule obsession={obsession} />
+          </div>
+        </section>
+      )}
+
+      {/* Two-Column: Portfolio + Recent Log */}
       <section className="container mb-16 md:mb-24">
-        <SectionHeader
-          title="Now"
-          subtitle={`What I'm focused on right now. Updated ${new Date(now.updatedAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}.`}
-        />
-        <NowModule now={now} />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Portfolio Module */}
+          <div>
+            <PortfolioModule
+              profile={linkedInProfile}
+              workItems={linkedInWork}
+              posts={linkedInPosts}
+            />
+          </div>
+
+          {/* Recent Log */}
+          <div>
+            <RecentLogModule entries={logEntries} />
+          </div>
+        </div>
       </section>
+
+      {/* Current Question */}
+      {question && (
+        <section className="container mb-16 md:mb-24">
+          <div className="max-w-xl">
+            <CurrentQuestionModule question={question} notes={questionNotes} />
+          </div>
+        </section>
+      )}
 
       {/* In Progress */}
       {inProgress.length > 0 && (

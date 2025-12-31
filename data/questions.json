@@ -1,0 +1,15 @@
+[
+  {
+    "slug": "starting-something-new",
+    "questionText": "What's important when starting something new?",
+    "rationaleBullets": [
+      "Applies to startups and the American Revolution—both built from the ground up",
+      "Every founder faces the same blank page, whether it's a pitch deck or a declaration",
+      "The patterns repeat: small teams, high stakes, unclear odds",
+      "I keep meeting people at the start of something. This is what I'm learning from them."
+    ],
+    "tracks": ["Startups/Product", "History/Revolutions"],
+    "createdAt": "2024-12-15T00:00:00Z",
+    "updatedAt": "2024-12-30T00:00:00Z"
+  }
+]
