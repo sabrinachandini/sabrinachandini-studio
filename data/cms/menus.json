@@ -8,11 +8,10 @@
       { "id": "nav-3", "label": "Media", "href": "/media", "order": 2, "visible": true, "group": "main" },
       { "id": "nav-4", "label": "Question", "href": "/question", "order": 3, "visible": true, "group": "main" },
       { "id": "nav-5", "label": "Log", "href": "/log", "order": 4, "visible": true, "group": "main" },
-      { "id": "nav-6", "label": "Index", "href": "/index", "order": 5, "visible": true, "group": "main" },
-      { "id": "nav-7", "label": "Experiments", "href": "/experiments", "order": 6, "visible": true, "group": "more" },
-      { "id": "nav-8", "label": "Collection", "href": "/collection", "order": 7, "visible": true, "group": "more" },
-      { "id": "nav-9", "label": "Guestbook", "href": "/guestbook", "order": 8, "visible": true, "group": "more" },
-      { "id": "nav-10", "label": "Contact", "href": "/contact", "order": 9, "visible": true, "group": "more" }
+      { "id": "nav-7", "label": "Experiments", "href": "/experiments", "order": 5, "visible": true, "group": "more" },
+      { "id": "nav-8", "label": "Collection", "href": "/collection", "order": 6, "visible": true, "group": "more" },
+      { "id": "nav-9", "label": "Guestbook", "href": "/guestbook", "order": 7, "visible": true, "group": "more" },
+      { "id": "nav-10", "label": "Contact", "href": "/contact", "order": 8, "visible": true, "group": "more" }
     ],
     "updatedAt": "2024-12-31T00:00:00.000Z"
   }

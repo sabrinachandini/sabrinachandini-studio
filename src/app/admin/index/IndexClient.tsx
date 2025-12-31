@@ -53,7 +53,7 @@ const STATUS_STYLES: Record<string, string> = {
   idea: 'bg-purple-100 text-purple-700',
 };
 
-export default function IndexPage() {
+export function IndexClient() {
   const [data, setData] = useState<IndexData | null>(null);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
@@ -185,25 +185,23 @@ export default function IndexPage() {
 
   if (loading) {
     return (
-      <main className="container py-12">
-        <div className="animate-pulse space-y-4">
-          <div className="h-8 bg-gray-200 rounded w-32" />
-          <div className="h-10 bg-gray-200 rounded w-full max-w-md" />
-          <div className="space-y-2">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="h-16 bg-gray-100 rounded" />
-            ))}
-          </div>
+      <div className="animate-pulse space-y-4">
+        <div className="h-8 bg-gray-200 rounded w-32" />
+        <div className="h-10 bg-gray-200 rounded w-full max-w-md" />
+        <div className="space-y-2">
+          {[1, 2, 3, 4, 5].map((i) => (
+            <div key={i} className="h-16 bg-gray-100 rounded" />
+          ))}
         </div>
-      </main>
+      </div>
     );
   }
 
   return (
-    <main className="container py-12">
+    <div>
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">Index</h1>
+        <h1 className="text-3xl font-bold mb-2">Content Index</h1>
         <p className="text-[var(--color-fg-muted)]">
           Everything on this site, including drafts and works-in-progress.
         </p>
@@ -316,7 +314,7 @@ export default function IndexPage() {
           <p>No items match your filters.</p>
         </div>
       )}
-    </main>
+    </div>
   );
 }
 
