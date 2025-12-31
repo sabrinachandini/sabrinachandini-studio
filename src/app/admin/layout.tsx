@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { isAdminAuthenticated } from '@/lib/auth';
-import { redirect } from 'next/navigation';
+import { AdminSidebar } from '@/components/admin/AdminSidebar';
+import { LogOut, User } from 'lucide-react';
 
 export default async function AdminLayout({
   children,
@@ -9,77 +10,42 @@ export default async function AdminLayout({
 }) {
   const isAuthenticated = await isAdminAuthenticated();
 
-  // Check if we're on the login page
-  // This is a workaround since we can't access pathname directly in layout
-  // The login page will handle its own auth check
+  // If not authenticated, show only children (login page will handle itself)
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-[var(--color-bg-alt)]">
+        <main className="container py-8">{children}</main>
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-[var(--color-bg-alt)]">
-      {/* Admin Header */}
-      <header className="bg-white border-b border-[var(--color-border)]">
-        <div className="container py-4 flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <Link href="/admin" className="font-semibold text-lg">
-              Admin
-            </Link>
-            {isAuthenticated && (
-              <nav className="flex items-center gap-4 text-sm">
-                <Link
-                  href="/admin/obsession"
-                  className="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)]"
-                >
-                  Obsession
-                </Link>
-                <Link
-                  href="/admin/question"
-                  className="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)]"
-                >
-                  Question
-                </Link>
-                <Link
-                  href="/admin/log"
-                  className="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)]"
-                >
-                  Log
-                </Link>
-                <Link
-                  href="/admin/guestbook"
-                  className="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)]"
-                >
-                  Guestbook
-                </Link>
-                <Link
-                  href="/admin/linkedin"
-                  className="text-[var(--color-fg-muted)] hover:text-[var(--color-fg)]"
-                >
-                  LinkedIn
-                </Link>
-              </nav>
-            )}
-          </div>
-          <div className="flex items-center gap-4">
-            <Link
-              href="/"
-              className="text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)]"
-            >
-              View Site
-            </Link>
-            {isAuthenticated && (
-              <form action="/api/admin/logout" method="POST">
-                <button
-                  type="submit"
-                  className="text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)]"
-                >
-                  Logout
-                </button>
-              </form>
-            )}
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen flex bg-[var(--color-bg-alt)]">
+      {/* Sidebar */}
+      <AdminSidebar />
 
-      {/* Admin Content */}
-      <main className="container py-8">{children}</main>
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col">
+        {/* Top Bar */}
+        <header className="bg-white border-b border-[var(--color-border)] px-6 py-3 flex items-center justify-end gap-4">
+          <div className="flex items-center gap-2 text-sm text-[var(--color-fg-muted)]">
+            <User size={14} />
+            <span>Admin</span>
+          </div>
+          <form action="/api/admin/logout" method="POST">
+            <button
+              type="submit"
+              className="flex items-center gap-1.5 text-sm text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors"
+            >
+              <LogOut size={14} />
+              Logout
+            </button>
+          </form>
+        </header>
+
+        {/* Page Content */}
+        <main className="flex-1 p-6 overflow-auto">{children}</main>
+      </div>
     </div>
   );
 }

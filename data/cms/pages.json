@@ -1,0 +1,428 @@
+[
+  {
+    "id": "page-1767208965329-k6qq2",
+    "slug": "",
+    "title": "Studio",
+    "seoTitle": "Sabrina Chandini - Builder, Storyteller, Entrepreneur",
+    "seoDescription": "Building products, telling stories, and learning in public.",
+    "template": "default",
+    "status": "published",
+    "blocks": [
+      {
+        "id": "block-1767208965329-9ry7o",
+        "type": "heading",
+        "data": {
+          "text": "Builder, Storyteller, Entrepreneur",
+          "level": 1
+        },
+        "order": 0
+      },
+      {
+        "id": "block-1767208965329-h9ooh",
+        "type": "richtext",
+        "data": {
+          "html": "<p>I build products, tell stories, and learn in public. This is my living studio — a space where ideas take shape, experiments run wild, and everything is perpetually in progress.</p>"
+        },
+        "order": 1
+      },
+      {
+        "id": "block-1767208965329-wp99l",
+        "type": "obsessionModule",
+        "data": {},
+        "order": 2
+      },
+      {
+        "id": "block-1767208965329-6kbo6",
+        "type": "heading",
+        "data": {
+          "text": "What I'm Working On",
+          "level": 2
+        },
+        "order": 3
+      },
+      {
+        "id": "block-1767208965329-jbad6",
+        "type": "experimentsList",
+        "data": {},
+        "order": 4
+      },
+      {
+        "id": "block-1767208965329-gqb7s",
+        "type": "heading",
+        "data": {
+          "text": "From the Collection",
+          "level": 2
+        },
+        "order": 5
+      },
+      {
+        "id": "block-1767208965329-818qy",
+        "type": "collectionGrid",
+        "data": {},
+        "order": 6
+      }
+    ],
+    "createdAt": "2025-12-31T19:22:45.328Z",
+    "updatedAt": "2025-12-31T19:22:45.328Z",
+    "publishedAt": "2025-12-31T19:22:45.328Z"
+  },
+  {
+    "id": "page-1767208965329-u2j8o",
+    "slug": "experiments",
+    "title": "Experiments",
+    "seoTitle": "Experiments - Things I'm Building",
+    "seoDescription": "Products, projects, writing, and talks. Each experiment is an opportunity to learn something new.",
+    "template": "default",
+    "status": "published",
+    "blocks": [
+      {
+        "id": "block-1767208965329-d6ayn",
+        "type": "heading",
+        "data": {
+          "text": "Things I'm building",
+          "level": 1
+        },
+        "order": 0
+      },
+      {
+        "id": "block-1767208965329-7bqzo",
+        "type": "richtext",
+        "data": {
+          "html": "<p>Products, projects, writing, and talks. Each experiment is an opportunity to learn something new.</p>"
+        },
+        "order": 1
+      },
+      {
+        "id": "block-1767208965329-dmmi6",
+        "type": "experimentsList",
+        "data": {},
+        "order": 2
+      }
+    ],
+    "createdAt": "2025-12-31T19:22:45.328Z",
+    "updatedAt": "2025-12-31T19:22:45.328Z",
+    "publishedAt": "2025-12-31T19:22:45.328Z"
+  },
+  {
+    "id": "page-1767208965329-d3a8p",
+    "slug": "collection",
+    "title": "Collection",
+    "seoTitle": "Collection - Things That Matter",
+    "seoDescription": "Tools, ideas, people, and places that shape how I work and think.",
+    "template": "default",
+    "status": "published",
+    "blocks": [
+      {
+        "id": "block-1767208965329-fo47n",
+        "type": "heading",
+        "data": {
+          "text": "Things that matter",
+          "level": 1
+        },
+        "order": 0
+      },
+      {
+        "id": "block-1767208965329-0hytw",
+        "type": "richtext",
+        "data": {
+          "html": "<p>Tools, ideas, people, and places that shape how I work and think. A curated cabinet of curiosities.</p>"
+        },
+        "order": 1
+      },
+      {
+        "id": "block-1767208965329-9aghx",
+        "type": "collectionGrid",
+        "data": {},
+        "order": 2
+      }
+    ],
+    "createdAt": "2025-12-31T19:22:45.328Z",
+    "updatedAt": "2025-12-31T19:22:45.328Z",
+    "publishedAt": "2025-12-31T19:22:45.328Z"
+  },
+  {
+    "id": "page-1767208965329-28nnc",
+    "slug": "portfolio",
+    "title": "Portfolio",
+    "seoTitle": "Portfolio - Work & Experience",
+    "seoDescription": "My professional journey, work experience, and selected posts.",
+    "template": "default",
+    "status": "published",
+    "blocks": [
+      {
+        "id": "block-1767208965329-sl0n9",
+        "type": "heading",
+        "data": {
+          "text": "Portfolio",
+          "level": 1
+        },
+        "order": 0
+      },
+      {
+        "id": "block-1767208965329-cj160",
+        "type": "richtext",
+        "data": {
+          "html": "<p>My professional journey and selected thoughts.</p>"
+        },
+        "order": 1
+      },
+      {
+        "id": "block-1767208965329-m9x4e",
+        "type": "heading",
+        "data": {
+          "text": "Experience",
+          "level": 2
+        },
+        "order": 2
+      },
+      {
+        "id": "block-1767208965329-akn1w",
+        "type": "portfolioWork",
+        "data": {},
+        "order": 3
+      },
+      {
+        "id": "block-1767208965329-kwx97",
+        "type": "heading",
+        "data": {
+          "text": "Posts",
+          "level": 2
+        },
+        "order": 4
+      },
+      {
+        "id": "block-1767208965329-ks0g9",
+        "type": "portfolioPosts",
+        "data": {},
+        "order": 5
+      }
+    ],
+    "createdAt": "2025-12-31T19:22:45.328Z",
+    "updatedAt": "2025-12-31T19:22:45.328Z",
+    "publishedAt": "2025-12-31T19:22:45.328Z"
+  },
+  {
+    "id": "page-1767208965329-m8y8a",
+    "slug": "media",
+    "title": "Media",
+    "seoTitle": "Media Library",
+    "seoDescription": "Photos, videos, and files from my creative journey.",
+    "template": "full-width",
+    "status": "published",
+    "blocks": [
+      {
+        "id": "block-1767208965329-69tbp",
+        "type": "heading",
+        "data": {
+          "text": "Media",
+          "level": 1
+        },
+        "order": 0
+      },
+      {
+        "id": "block-1767208965329-9dlk2",
+        "type": "richtext",
+        "data": {
+          "html": "<p>Photos, videos, and files from my creative journey.</p>"
+        },
+        "order": 1
+      },
+      {
+        "id": "block-1767208965329-r07e8",
+        "type": "mediaList",
+        "data": {},
+        "order": 2
+      }
+    ],
+    "createdAt": "2025-12-31T19:22:45.328Z",
+    "updatedAt": "2025-12-31T19:22:45.328Z",
+    "publishedAt": "2025-12-31T19:22:45.328Z"
+  },
+  {
+    "id": "page-1767208965329-komu9",
+    "slug": "contact",
+    "title": "Contact",
+    "seoTitle": "Get in Touch",
+    "seoDescription": "I'd love to hear from you. Whether it's a question, collaboration, or just to say hi.",
+    "template": "narrow",
+    "status": "published",
+    "blocks": [
+      {
+        "id": "block-1767208965329-5wkzu",
+        "type": "heading",
+        "data": {
+          "text": "Get in Touch",
+          "level": 1
+        },
+        "order": 0
+      },
+      {
+        "id": "block-1767208965330-izb62",
+        "type": "richtext",
+        "data": {
+          "html": "<p>I'd love to hear from you. Whether it's a question, a collaboration opportunity, or just to say hi, feel free to reach out.</p>"
+        },
+        "order": 1
+      },
+      {
+        "id": "block-1767208965330-20hlh",
+        "type": "heading",
+        "data": {
+          "text": "Ways to Connect",
+          "level": 2
+        },
+        "order": 2
+      },
+      {
+        "id": "block-1767208965330-y856c",
+        "type": "linkList",
+        "data": {
+          "links": [
+            {
+              "label": "Email",
+              "url": "mailto:hello@sabrinachandini.com",
+              "description": "Best for longer conversations"
+            },
+            {
+              "label": "Twitter/X",
+              "url": "https://twitter.com/sabrinachandini",
+              "description": "Quick thoughts and updates"
+            },
+            {
+              "label": "LinkedIn",
+              "url": "https://linkedin.com/in/sabrinachandini",
+              "description": "Professional connections"
+            }
+          ]
+        },
+        "order": 3
+      },
+      {
+        "id": "block-1767208965330-auetm",
+        "type": "callout",
+        "data": {
+          "type": "info",
+          "title": "Response Time",
+          "text": "I typically respond within 24-48 hours. For urgent matters, Twitter DMs work best."
+        },
+        "order": 4
+      }
+    ],
+    "createdAt": "2025-12-31T19:22:45.328Z",
+    "updatedAt": "2025-12-31T19:22:45.328Z",
+    "publishedAt": "2025-12-31T19:22:45.328Z"
+  },
+  {
+    "id": "page-1767208965330-mb98d",
+    "slug": "log",
+    "title": "Build Log",
+    "seoTitle": "Build Log - What I'm Shipping",
+    "seoDescription": "What I'm shipping, learning, and changing my mind about.",
+    "template": "narrow",
+    "status": "published",
+    "blocks": [
+      {
+        "id": "block-1767208965330-loi5j",
+        "type": "heading",
+        "data": {
+          "text": "Build Log",
+          "level": 1
+        },
+        "order": 0
+      },
+      {
+        "id": "block-1767208965330-iw02h",
+        "type": "richtext",
+        "data": {
+          "html": "<p>What I'm shipping, learning, and changing my mind about.</p>"
+        },
+        "order": 1
+      },
+      {
+        "id": "block-1767208965330-gdu89",
+        "type": "logList",
+        "data": {
+          "limit": 50
+        },
+        "order": 2
+      }
+    ],
+    "createdAt": "2025-12-31T19:22:45.328Z",
+    "updatedAt": "2025-12-31T19:22:45.328Z",
+    "publishedAt": "2025-12-31T19:22:45.328Z"
+  },
+  {
+    "id": "page-1767208965330-px4ct",
+    "slug": "question",
+    "title": "Question",
+    "seoTitle": "The Daily Question",
+    "seoDescription": "One question, asked every day. A practice in curiosity.",
+    "template": "narrow",
+    "status": "published",
+    "blocks": [
+      {
+        "id": "block-1767208965330-ll4e0",
+        "type": "heading",
+        "data": {
+          "text": "The Daily Question",
+          "level": 1
+        },
+        "order": 0
+      },
+      {
+        "id": "block-1767208965330-xfplg",
+        "type": "richtext",
+        "data": {
+          "html": "<p>One question, asked every day. A practice in curiosity and reflection.</p>"
+        },
+        "order": 1
+      },
+      {
+        "id": "block-1767208965330-935pn",
+        "type": "questionNotes",
+        "data": {},
+        "order": 2
+      }
+    ],
+    "createdAt": "2025-12-31T19:22:45.328Z",
+    "updatedAt": "2025-12-31T19:22:45.328Z",
+    "publishedAt": "2025-12-31T19:22:45.328Z"
+  },
+  {
+    "id": "page-1767208965330-51csl",
+    "slug": "guestbook",
+    "title": "Guestbook",
+    "seoTitle": "Sign the Guestbook",
+    "seoDescription": "Leave a message, say hello, or share what brought you here.",
+    "template": "narrow",
+    "status": "published",
+    "blocks": [
+      {
+        "id": "block-1767208965330-wqoht",
+        "type": "heading",
+        "data": {
+          "text": "Guestbook",
+          "level": 1
+        },
+        "order": 0
+      },
+      {
+        "id": "block-1767208965330-kox6q",
+        "type": "richtext",
+        "data": {
+          "html": "<p>Leave a message, say hello, or share what brought you here. I read every entry.</p>"
+        },
+        "order": 1
+      },
+      {
+        "id": "block-1767208965330-3omb4",
+        "type": "guestbookForm",
+        "data": {},
+        "order": 2
+      }
+    ],
+    "createdAt": "2025-12-31T19:22:45.328Z",
+    "updatedAt": "2025-12-31T19:22:45.328Z",
+    "publishedAt": "2025-12-31T19:22:45.328Z"
+  }
+]

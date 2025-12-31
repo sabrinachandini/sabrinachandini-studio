@@ -1,0 +1,15 @@
+[
+  {
+    "id": "menu-primary",
+    "name": "primary",
+    "items": [
+      { "id": "nav-1", "label": "Studio", "href": "/", "order": 0, "visible": true },
+      { "id": "nav-2", "label": "Experiments", "href": "/experiments", "order": 1, "visible": true },
+      { "id": "nav-3", "label": "Collection", "href": "/collection", "order": 2, "visible": true },
+      { "id": "nav-4", "label": "Portfolio", "href": "/portfolio", "order": 3, "visible": true },
+      { "id": "nav-5", "label": "Media", "href": "/media", "order": 4, "visible": true },
+      { "id": "nav-6", "label": "Contact", "href": "/contact", "order": 5, "visible": true }
+    ],
+    "updatedAt": "2024-12-31T00:00:00.000Z"
+  }
+]

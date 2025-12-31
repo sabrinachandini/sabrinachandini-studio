@@ -1,0 +1,25 @@
+{
+  "siteTitle": "Sabrina Chandini",
+  "siteDescription": "Builder, Storyteller, Entrepreneur",
+  "contactEmail": "hello@sabrinachandini.com",
+  "footerLinks": [],
+  "socialLinks": [
+    { "name": "LinkedIn", "url": "https://linkedin.com/in/sabrinachandini" },
+    { "name": "Twitter", "url": "https://twitter.com/sabrinachandini" }
+  ],
+  "featureFlags": {
+    "showObsession": true,
+    "showPortfolio": true,
+    "showLog": true,
+    "showQuestion": true,
+    "showGuestbook": true
+  },
+  "homeModules": [
+    { "id": "obsession", "type": "obsession", "enabled": true, "order": 0 },
+    { "id": "portfolio-log", "type": "portfolio-log", "enabled": true, "order": 1 },
+    { "id": "question", "type": "question", "enabled": true, "order": 2 },
+    { "id": "experiments", "type": "experiments", "enabled": true, "order": 3 },
+    { "id": "collection", "type": "collection", "enabled": true, "order": 4 }
+  ],
+  "updatedAt": "2024-12-31T00:00:00.000Z"
+}
